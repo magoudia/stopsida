@@ -1,6 +1,7 @@
 import React from 'react';
 import { Shield, Heart, Users, BookOpen, Stethoscope, Megaphone } from 'lucide-react';
 import { useTranslations } from '../contexts/LanguageContext';
+import { motion } from 'framer-motion';
 
 const Actions: React.FC = () => {
   const t = useTranslations() as any;
@@ -21,35 +22,51 @@ const Actions: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-600 to-red-800 text-white section-padding">
+      <motion.section
+        className="bg-gradient-to-br from-red-600 to-red-800 text-white section-padding"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
         <div className="container-max">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <motion.h1 className="text-4xl md:text-6xl font-bold mb-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
               {t.actions.heroTitle}
-            </h1>
-            <p className="text-xl md:text-2xl text-red-100 leading-relaxed">
+            </motion.h1>
+            <motion.p className="text-xl md:text-2xl text-red-100 leading-relaxed" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
               {t.actions.heroDesc}
-            </p>
+            </motion.p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Programmes principaux */}
-      <section className="bg-white section-padding">
+      <motion.section
+        className="bg-white section-padding"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
         <div className="container-max">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <motion.h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
               {t.actions.programsTitle}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p className="text-xl text-gray-600 max-w-2xl mx-auto" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
               {t.actions.programsDesc}
-            </p>
+            </motion.p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {programs.map((program, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <img
+              <motion.div
+                key={index}
+                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + index * 0.1 }}
+              >
+                <motion.img
                   src={program.image}
                   alt={program.title}
                   className="w-full h-48 object-cover"
@@ -59,51 +76,68 @@ const Actions: React.FC = () => {
                     <div className="bg-red-100 p-2 rounded-lg">
                       <program.icon className="h-6 w-6 text-red-600" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <motion.h3 className="text-xl font-semibold text-gray-900" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
                       {program.title}
-                    </h3>
+                    </motion.h3>
                   </div>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <motion.p className="text-gray-600 mb-4 leading-relaxed" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
                     {program.description}
-                  </p>
+                  </motion.p>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-2">{program.activitiesTitle}</h4>
+                    <motion.h4 className="font-medium text-gray-900 mb-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}>{program.activitiesTitle}</motion.h4>
                     <ul className="space-y-1">
                       {program.activities.map((activity, actIndex) => (
-                        <li key={actIndex} className="text-sm text-gray-600 flex items-center">
+                        <motion.li
+                          key={actIndex}
+                          className="text-sm text-gray-600 flex items-center"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.8 + actIndex * 0.05 }}
+                        >
                           <span className="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
                           {activity}
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projets en cours */}
-      <section className="bg-gray-50 section-padding">
+      <motion.section
+        className="bg-gray-50 section-padding"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+      >
         <div className="container-max">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <motion.h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
               {t.actions.projectsTitle}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p className="text-xl text-gray-600 max-w-2xl mx-auto" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
               {t.actions.projectsDesc}
-            </p>
+            </motion.p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {currentProjects.map((project, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <motion.div
+                key={index}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 + index * 0.1 }}
+              >
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <motion.h3 className="text-lg font-semibold text-gray-900" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
                       {project.title}
-                    </h3>
+                    </motion.h3>
                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                       project.status === 'En cours' 
                         ? 'bg-green-100 text-green-800' 
@@ -112,9 +146,9 @@ const Actions: React.FC = () => {
                       {project.status}
                     </span>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <motion.p className="text-gray-600 text-sm leading-relaxed" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}>
                     {project.description}
-                  </p>
+                  </motion.p>
                 </div>
                 
                 <div className="space-y-2 text-sm">
@@ -127,58 +161,86 @@ const Actions: React.FC = () => {
                     <span className="font-medium text-gray-900">{project.partner}</span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Impact et résultats */}
-      <section className="bg-red-600 text-white section-padding">
+      <motion.section
+        className="bg-red-600 text-white section-padding"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.4 }}
+      >
         <div className="container-max">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <motion.h2 className="text-3xl md:text-4xl font-bold mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
               {t.actions.impactTitle}
-            </h2>
-            <p className="text-xl text-red-100 max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p className="text-xl text-red-100 max-w-2xl mx-auto" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}>
               {t.actions.impactDesc}
-            </p>
+            </motion.p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {t.actions.impactStats.map((stat, i) => (
-              <div className="text-center" key={i}>
+              <motion.div
+                className="text-center"
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 + i * 0.1 }}
+              >
                 <div className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
                 <div className="text-red-100">{stat.label}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Call to action */}
-      <section className="bg-white section-padding">
+      <motion.section
+        className="bg-white section-padding"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.5 }}
+      >
         <div className="container-max text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <motion.h2 className="text-3xl md:text-4xl font-bold text-gray-900" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
               {t.actions.participateTitle}
-            </h2>
-            <p className="text-xl text-gray-600">
+            </motion.h2>
+            <motion.p className="text-xl text-gray-600" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
               {t.actions.participateDesc}
-            </p>
+            </motion.p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/devenir-benevole" className="btn-primary inline-flex items-center justify-center">
+              <motion.a
+                href="/devenir-benevole"
+                className="btn-primary inline-flex items-center justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9 }}
+              >
                 <Users className="mr-2 h-5 w-5" />
                 {t.actions.becomeVolunteer}
-              </a>
-              <a href="/contact" className="btn-secondary inline-flex items-center justify-center">
+              </motion.a>
+              <motion.a
+                href="/contact"
+                className="btn-secondary inline-flex items-center justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 }}
+              >
                 <Heart className="mr-2 h-5 w-5" />
                 {t.actions.supportUs}
-              </a>
+              </motion.a>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

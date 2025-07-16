@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FileText, Download, Calendar, Eye, Search, Filter } from 'lucide-react';
 import { useTranslations } from '../contexts/LanguageContext';
+import { motion } from 'framer-motion';
 
 const Reports: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -36,7 +37,12 @@ const Reports: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-600 to-red-800 text-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-gradient-to-br from-red-600 to-red-800 text-white section-padding"
+      >
         <div className="container-max">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -47,10 +53,15 @@ const Reports: React.FC = () => {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Filtres et recherche */}
-      <section className="bg-white py-8">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-white py-8"
+      >
         <div className="container-max">
           <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
             {/* Recherche */}
@@ -98,11 +109,16 @@ const Reports: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Documents en vedette */}
       {featuredReports.length > 0 && (
-        <section className="bg-gray-50 section-padding">
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-gray-50 section-padding"
+        >
           <div className="container-max">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">{t.reports.featuredTitle}</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -154,11 +170,16 @@ const Reports: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
+        </motion.section>
       )}
 
       {/* Tous les rapports */}
-      <section className="bg-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-white section-padding"
+      >
         <div className="container-max">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
             {t.reports.allReportsTitle}
@@ -218,10 +239,15 @@ const Reports: React.FC = () => {
             </div>
           )}
         </div>
-      </section>
+      </motion.section>
 
       {/* Statistiques */}
-      <section className="bg-red-600 text-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-red-600 text-white section-padding"
+      >
         <div className="container-max">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -251,7 +277,7 @@ const Reports: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

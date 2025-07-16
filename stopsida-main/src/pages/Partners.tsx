@@ -1,6 +1,7 @@
 import React from 'react';
 import { Handshake, Globe, Heart, Award, Users, Building } from 'lucide-react';
 import { useTranslations } from '../contexts/LanguageContext';
+import { motion } from 'framer-motion';
 
 const Partners: React.FC = () => {
   const t = useTranslations() as any;
@@ -32,7 +33,12 @@ const Partners: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-600 to-red-800 text-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-gradient-to-br from-red-600 to-red-800 text-white section-padding"
+      >
         <div className="container-max">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -43,10 +49,15 @@ const Partners: React.FC = () => {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Introduction */}
-      <section className="bg-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-white section-padding"
+      >
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -72,7 +83,10 @@ const Partners: React.FC = () => {
               </div>
             </div>
             <div>
-              <img
+              <motion.img
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 src="https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Partenariats STOP SIDA"
                 className="rounded-lg shadow-lg"
@@ -80,10 +94,15 @@ const Partners: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Catégories de partenaires */}
-      <section className="bg-gray-50 section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-gray-50 section-padding"
+      >
         <div className="container-max">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -98,7 +117,13 @@ const Partners: React.FC = () => {
             {categories.map((category: any, categoryIndex: number) => {
               const IconComponent = iconMap[category.title as keyof typeof iconMap] || Globe;
               return (
-                <div key={categoryIndex} className="bg-white rounded-lg shadow-md p-8">
+                <motion.div
+                  key={categoryIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-lg shadow-md p-8"
+                >
                   <div className="flex items-center space-x-3 mb-8">
                     <div className="bg-red-100 p-3 rounded-lg">
                       <IconComponent className="h-6 w-6 text-red-600" />
@@ -110,9 +135,18 @@ const Partners: React.FC = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {category.partners?.map((partner: any, partnerIndex: number) => (
-                      <div key={partnerIndex} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                      <motion.div
+                        key={partnerIndex}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
+                      >
                         <div className="flex items-center space-x-4 mb-4">
-                          <img
+                          <motion.img
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
                             src="https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=200"
                             alt={partner.name}
                             className="w-16 h-16 object-cover rounded-lg"
@@ -132,18 +166,23 @@ const Partners: React.FC = () => {
                         <div className="text-xs text-gray-500">
                           <span className="font-medium">{t.partners.partnerSince}</span> {partner.since}
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Réalisations communes */}
-      <section className="bg-red-600 text-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-red-600 text-white section-padding"
+      >
         <div className="container-max">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -156,7 +195,13 @@ const Partners: React.FC = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {achievements.map((achievement: any, index: number) => (
-              <div key={index} className="text-center">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
                 <div className="text-4xl md:text-5xl font-bold mb-2">
                   {achievement.value}
                 </div>
@@ -166,82 +211,74 @@ const Partners: React.FC = () => {
                 <div className="text-red-200 text-sm">
                   {achievement.description}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Témoignages de partenaires */}
-      <section className="bg-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-white section-padding"
+      >
         <div className="container-max">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Témoignages de Partenaires
+              {t.partners.testimonialsTitle}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Ce que disent nos partenaires de notre collaboration
+              {t.partners.testimonialsDesc}
             </p>
           </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-600 mb-4 italic">
-                "STOP SIDA est un partenaire fiable et engagé. Leur expertise 
-                terrain et leur connaissance du contexte local sont précieuses 
-                pour nos programmes."
-              </p>
-              <div className="font-semibold text-gray-900">Dr. Marie Dubois</div>
-              <div className="text-red-600 text-sm">Représentante OMS Mauritanie</div>
-            </div>
-            
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-600 mb-4 italic">
-                "La collaboration avec STOP SIDA nous a permis d'atteindre 
-                des populations vulnérables et d'avoir un impact réel sur 
-                la prévention du VIH."
-              </p>
-              <div className="font-semibold text-gray-900">Ahmed Ould Mohamed</div>
-              <div className="text-red-600 text-sm">Directeur PNLS</div>
-            </div>
-            
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-600 mb-4 italic">
-                "STOP SIDA démontre un professionnalisme exemplaire et 
-                une transparence totale dans la gestion des projets. 
-                C'est un partenaire de choix."
-              </p>
-              <div className="font-semibold text-gray-900">Sarah Johnson</div>
-              <div className="text-red-600 text-sm">Coordinatrice Fonds Mondial</div>
-            </div>
+            {t.partners.testimonials?.map((testimonial: any, idx: number) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 p-6 rounded-lg"
+              >
+                <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
+                <div className="font-semibold text-gray-900">{testimonial.author}</div>
+                <div className="text-red-600 text-sm">{testimonial.role}</div>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Devenir partenaire */}
-      <section className="bg-gray-50 section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-gray-50 section-padding"
+      >
         <div className="container-max text-center">
           <div className="max-w-3xl mx-auto space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Devenir Partenaire
+              {t.partners.becomePartner}
             </h2>
             <p className="text-xl text-gray-600">
-              Vous souhaitez rejoindre notre réseau de partenaires ? 
-              Contactez-nous pour explorer les opportunités de collaboration.
+              {t.partners.becomePartnerDesc}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact" className="btn-primary inline-flex items-center justify-center">
                 <Handshake className="mr-2 h-5 w-5" />
-                Nous contacter
+                {t.partners.contactUs}
               </a>
               <a href="/rapports" className="btn-secondary inline-flex items-center justify-center">
                 <Heart className="mr-2 h-5 w-5" />
-                Voir nos rapports
+                {t.partners.seeReports}
               </a>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

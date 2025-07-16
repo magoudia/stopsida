@@ -263,10 +263,84 @@ const translations = {
     volunteer: {
       heroTitle: 'Devenir Bénévole',
       heroDesc: 'Rejoignez notre équipe de bénévoles engagés dans la lutte contre le VIH/SIDA. Ensemble, nous pouvons faire la différence.',
+      whyJoinTitle: 'Pourquoi devenir bénévole ?',
+      whyJoinDesc: 'Contribuez à une cause essentielle, développez vos compétences et faites partie d\'une équipe solidaire et engagée.',
+      benefits: [
+        'Avoir un impact positif sur la société',
+        'Rencontrer des personnes inspirantes',
+        'Participer à des projets concrets',
+        'Recevoir une attestation de bénévolat'
+      ],
+      teamTitle: 'Notre équipe de bénévoles',
+      opportunitiesTitle: 'Opportunités de bénévolat',
+      opportunitiesDesc: 'Découvrez les différentes façons de vous engager à nos côtés.',
+      opportunities: [
+        {
+          title: 'Sensibilisation',
+          description: 'Participez à des campagnes de prévention et d\'information.',
+          time: 'Selon vos disponibilités',
+          skillsLabel: 'Compétences requises :',
+          skills: ['Communication', 'Empathie', 'Travail en équipe']
+        },
+        {
+          title: 'Accompagnement',
+          description: 'Soutenez les personnes vivant avec le VIH/SIDA.',
+          time: '1 à 2 fois par semaine',
+          skillsLabel: 'Compétences requises :',
+          skills: ['Écoute', 'Bienveillance', 'Discrétion']
+        },
+        {
+          title: 'Formation',
+          description: 'Animez des ateliers de sensibilisation dans les écoles et centres communautaires.',
+          time: '3-5 heures/semaine',
+          skillsLabel: 'Compétences requises :',
+          skills: ['Pédagogie', 'Présentation', 'Créativité']
+        },
+        {
+          title: 'Soutien administratif',
+          description: 'Aidez à la gestion administrative et logistique des projets.',
+          time: '4-6 heures/semaine',
+          skillsLabel: 'Compétences requises :',
+          skills: ['Bureautique', 'Organisation', 'Rigueur']
+        }
+      ],
+      applyTitle: 'Postuler comme bénévole',
+      applyDesc: 'Remplissez ce formulaire pour rejoindre notre équipe',
+      form: {
+        firstName: 'Prénom',
+        lastName: 'Nom',
+        email: 'Email',
+        phone: 'Téléphone',
+        age: 'Âge',
+        profession: 'Profession',
+        availability: 'Disponibilité',
+        availabilityOptions: {
+          select: 'Sélectionnez votre disponibilité',
+        },
+        experience: 'Expérience pertinente',
+        experiencePlaceholder: 'Décrivez votre expérience en santé, travail social ou bénévolat...',
+        motivation: 'Motivation',
+        motivationPlaceholder: 'Expliquez pourquoi vous souhaitez devenir bénévole chez STOP SIDA...',
+        send: 'Envoyer ma candidature',
+      },
       sendApplication: 'Envoyer ma candidature',
-      testimonialsTitle: 'Témoignages de Bénévoles',
-      testimonialsDesc: 'Découvrez l\'expérience de nos bénévoles engagés',
-      // ... autres clés à compléter selon la page
+      testimonials: [
+        {
+          text: "Être bénévole chez STOP SIDA m'a permis de contribuer concrètement à la santé de ma communauté. C'est une expérience enrichissante.",
+          author: 'Aminata S.',
+          since: 'Bénévole depuis 2 ans'
+        },
+        {
+          text: "La formation reçue et l'accompagnement de l'équipe m'ont donné confiance pour sensibiliser efficacement sur le VIH/SIDA.",
+          author: 'Mohamed O.',
+          since: 'Bénévole depuis 1 an'
+        },
+        {
+          text: "Chaque action, même petite, compte dans cette lutte. Je suis fière de faire partie de cette mission.",
+          author: 'Fatou B.',
+          since: 'Bénévole depuis 3 ans'
+        }
+      ]
     },
     contact: {
       heroTitle: 'Contactez-nous',
@@ -349,10 +423,10 @@ const translations = {
         question: 'Comment nous soutenir ?',
         answer: 'Plusieurs options : bénévolat, dons, partenariats. Parlons-en !'
       },
-      newsletterTitle: 'Stay Connected',
-      newsletterDesc: 'Subscribe to our newsletter to receive our news and information about the fight against HIV/AIDS',
-      newsletterPlaceholder: 'Your email address',
-      subscribeButton: 'Subscribe'
+      newsletterTitle: 'Restez connecté',
+      newsletterDesc: 'Abonnez-vous à notre newsletter pour recevoir nos actualités et des informations sur la lutte contre le VIH/SIDA',
+      newsletterPlaceholder: 'Votre adresse e-mail',
+      subscribeButton: "S'abonner"
     },
     reports: {
       heroTitle: 'Rapports et documents',
@@ -530,8 +604,8 @@ const translations = {
         }
       ],
       newsletterTitle: 'Restez informé',
-      newsletterDesc: 'Abonnez-vous à notre newsletter pour recevoir nos dernières actualités',
-      newsletterPlaceholder: 'Your email address',
+      newsletterDesc: 'Abonnez-vous à notre newsletter pour recevoir nos actualités et informations sur la lutte contre le VIH/SIDA',
+      newsletterPlaceholder: 'Votre adresse email',
       subscribeButton: "S'abonner",
     },
     partners: {
@@ -649,7 +723,31 @@ const translations = {
           value: '30+',
           description: 'Années de collaboration fructueuse'
         }
-      ]
+      ],
+      testimonialsTitle: 'Témoignages de Partenaires',
+      testimonialsDesc: 'Ce que disent nos partenaires de notre collaboration',
+      testimonials: [
+        {
+          text: 'STOP SIDA est un partenaire fiable et engagé. Leur expertise terrain et leur connaissance du contexte local sont précieuses pour nos programmes.',
+          author: 'Dr. Marie Dubois',
+          role: 'Représentante OMS Mauritanie'
+        },
+        {
+          text: "La collaboration avec STOP SIDA nous a permis d'atteindre des populations vulnérables et d'avoir un impact réel sur la prévention du VIH.",
+          author: 'Ahmed Ould Mohamed',
+          role: 'Directeur PNLS'
+        },
+        {
+          text: "STOP SIDA démontre un professionnalisme exemplaire et une transparence totale dans la gestion des projets. C'est un partenaire de choix.",
+          author: 'Sarah Johnson',
+          role: 'Coordinatrice Fonds Mondial'
+        }
+      ],
+      becomePartner: 'Devenir Partenaire',
+      becomePartnerDesc: 'Vous souhaitez rejoindre notre réseau de partenaires ? Contactez-nous pour explorer les opportunités de collaboration.',
+      contactUs: 'Nous contacter',
+      seeReports: 'Voir nos rapports',
+      // ... autres clés ...
     },
     // ... autres sections globales
   },
@@ -1161,7 +1259,7 @@ const translations = {
           content: 'This initiative aims to reach over 5,000 students...',
           date: 'December 15, 2024',
           author: 'Communications Team',
-          category: 'Prevention',
+          category: 'Prévention',
           image: 'https://images.pexels.com/photos/5427674/pexels-photo-5427674.jpeg?auto=compress&cs=tinysrgb&w=600',
           featured: true
         },
@@ -1172,7 +1270,7 @@ const translations = {
           content: 'This partnership will allow...',
           date: 'December 10, 2024',
           author: 'Management',
-          category: 'Partnerships',
+          category: 'Partenariats',
           image: 'https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=600',
           featured: true
         },
@@ -1194,7 +1292,7 @@ const translations = {
           content: 'On December 1st, we organized...',
           date: 'December 1, 2024',
           author: 'Events Team',
-          category: 'Events',
+          category: 'Événements',
           image: 'https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=600',
           featured: false
         },
@@ -1205,7 +1303,7 @@ const translations = {
           content: 'The results show that...',
           date: 'November 25, 2024',
           author: 'Research Team',
-          category: 'Research',
+          category: 'Recherche',
           image: 'https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=600',
           featured: false
         },
@@ -1216,7 +1314,7 @@ const translations = {
           content: 'This new center will allow...',
           date: 'November 20, 2024',
           author: 'Field Team',
-          category: 'Prevention',
+          category: 'Prévention',
           image: 'https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=600',
           featured: false
         }
@@ -1341,7 +1439,30 @@ const translations = {
           value: '30+',
           description: 'Years of fruitful collaboration'
         }
-      ]
+      ],
+      testimonialsTitle: 'Partner Testimonials',
+      testimonialsDesc: 'What our partners say about our collaboration',
+      testimonials: [
+        {
+          text: 'STOP SIDA is a reliable and committed partner. Their field expertise and knowledge of the local context are valuable for our programs.',
+          author: 'Dr. Marie Dubois',
+          role: 'WHO Representative Mauritania'
+        },
+        {
+          text: 'Collaboration with STOP SIDA has enabled us to reach vulnerable populations and have a real impact on HIV prevention.',
+          author: 'Ahmed Ould Mohamed',
+          role: 'Director, PNLS'
+        },
+        {
+          text: 'STOP SIDA demonstrates exemplary professionalism and total transparency in project management. They are a partner of choice.',
+          author: 'Sarah Johnson',
+          role: 'Global Fund Coordinator'
+        }
+      ],
+      becomePartner: 'Become a Partner',
+      becomePartnerDesc: 'Would you like to join our network of partners? Contact us to explore collaboration opportunities.',
+      contactUs: 'Contact us',
+      seeReports: 'See our reports'
     },
     // ... autres sections globales
   },
@@ -1420,9 +1541,61 @@ const translations = {
           excerpt: 'برنامج تدريبي مكثف حول رعاية فيروس نقص المناعة والدعم النفسي الاجتماعي للمرضى.',
         },
       ],
+      // Ajout de la clé 'articles' pour l'affichage des actualités en arabe
+      articles: [
+        {
+          id: 1,
+          title: 'حملة توعية جديدة في مدارس نواكشوط',
+          excerpt: 'تطلق STOP SIDA حملة تعليمية في 20 مدرسة لرفع وعي الشباب بمخاطر فيروس نقص المناعة البشرية/الإيدز.',
+          content: 'تهدف هذه المبادرة إلى الوصول إلى أكثر من 5000 طالب من خلال أنشطة تفاعلية وورش عمل تعليمية.',
+          date: '15 ديسمبر 2024',
+          author: 'فريق التواصل',
+          category: 'الوقاية',
+          image: 'https://images.pexels.com/photos/5427674/pexels-photo-5427674.jpeg?auto=compress&cs=tinysrgb&w=600',
+          featured: true
+        },
+        {
+          id: 2,
+          title: 'شراكة استراتيجية مع منظمة الصحة العالمية',
+          excerpt: 'توقيع اتفاقية تعاون لتعزيز إجراءات الوقاية والرعاية من فيروس نقص المناعة في موريتانيا.',
+          content: 'ستسمح هذه الشراكة بتوسيع نطاق الفحوصات المجانية وزيادة التوعية المجتمعية.',
+          date: '10 ديسمبر 2024',
+          author: 'فريق STOP SIDA',
+          category: 'شراكات',
+          image: 'https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=600',
+          featured: true
+        },
+        {
+          id: 3,
+          title: 'تدريب 100 عامل صحة مجتمعية',
+          excerpt: 'برنامج تدريبي مكثف حول رعاية فيروس نقص المناعة والدعم النفسي الاجتماعي للمرضى.',
+          content: 'تم تدريب المشاركين على أحدث بروتوكولات الرعاية والدعم النفسي.',
+          date: '5 ديسمبر 2024',
+          author: 'إدارة البرامج',
+          category: 'تدريب',
+          image: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600',
+          featured: false
+        }
+      ],
       readMore: 'اقرأ المزيد',
       allNews: 'عرض كل الأخبار',
       // ... autres clés ...
+      newsletterTitle: 'ابق على تواصل',
+      newsletterDesc: 'اشترك في النشرة الإخبارية لتصلك أخبارنا ومعلوماتنا حول مكافحة فيروس نقص المناعة البشرية/الإيدز',
+      newsletterPlaceholder: 'بريدك الإلكتروني',
+      subscribeButton: 'اشترك',
+      // ... autres clés ...
+      missionPrevention: 'الوقاية',
+      missionPreventionDesc: 'التوعية والتعليم المجتمعي',
+      missionTreatment: 'العلاج',
+      missionTreatmentDesc: 'الوصول إلى الرعاية والمرافقة الطبية',
+      missionAdvocacy: 'المناصرة',
+      missionAdvocacyDesc: 'الدفاع عن الحقوق والتوعية السياسية',
+      learnMore: 'اعرف المزيد',
+      joinTitle: 'انضموا إلى نضالنا',
+      joinDesc: 'معًا، يمكننا إحداث فرق في مكافحة فيروس نقص المناعة البشرية/الإيدز. التزامكم مهم.',
+      joinVolunteer: 'كن متطوعًا',
+      joinSupport: 'ادعمنا',
     },
     about: {
       heroTitle: 'من نحن؟',
@@ -1720,13 +1893,6 @@ const translations = {
           time: '3-5 ساعات/أسبوع',
           skillsLabel: 'المهارات المطلوبة :',
           skills: ['البيداغوجيا', 'العرض', 'الإبداع']
-        },
-        {
-          title: 'الدعم الإداري',
-          description: 'المساعدة في الإدارة واللوجستيك للمشاريع.',
-          time: '4-6 ساعات/أسبوع',
-          skillsLabel: 'المهارات المطلوبة :',
-          skills: ['المكتبية', 'التنظيم', 'الدقة']
         }
       ],
       applyTitle: 'التقديم كمتطوع',
@@ -1771,7 +1937,7 @@ const translations = {
       pageTitle: 'الأخبار',
       pageDesc: 'تابع آخر أنشطتنا وفعالياتنا وتقدمنا في مكافحة فيروس نقص المناعة البشرية/الإيدز',
       searchPlaceholder: 'ابحث عن مقال...',
-      categories: ['الكل', 'الوقاية', 'البحث', 'الفعاليات', 'الشراكات', 'التدريب'],
+      categories: ['الكل', 'الوقاية', 'شراكات', 'تدريب'],
       featuredTitle: 'الأبرز',
       readMore: 'اقرأ المزيد',
       otherNews: 'أخبار أخرى',
@@ -1780,6 +1946,41 @@ const translations = {
       newsletterDesc: 'اشترك في النشرة الإخبارية لتصلك آخر أخبارنا',
       newsletterPlaceholder: 'بريدك الإلكتروني',
       subscribeButton: 'اشترك',
+      articles: [
+        {
+          id: 1,
+          title: 'حملة توعية جديدة في مدارس نواكشوط',
+          excerpt: 'تطلق STOP SIDA حملة تعليمية في 20 مدرسة لرفع وعي الشباب بمخاطر فيروس نقص المناعة البشرية/الإيدز.',
+          content: 'تهدف هذه المبادرة إلى الوصول إلى أكثر من 5000 طالب من خلال أنشطة تفاعلية وورش عمل تعليمية.',
+          date: '15 ديسمبر 2024',
+          author: 'فريق التواصل',
+          category: 'الوقاية',
+          image: 'https://images.pexels.com/photos/5427674/pexels-photo-5427674.jpeg?auto=compress&cs=tinysrgb&w=600',
+          featured: true
+        },
+        {
+          id: 2,
+          title: 'شراكة استراتيجية مع منظمة الصحة العالمية',
+          excerpt: 'توقيع اتفاقية تعاون لتعزيز إجراءات الوقاية والرعاية من فيروس نقص المناعة في موريتانيا.',
+          content: 'ستسمح هذه الشراكة بتوسيع نطاق الفحوصات المجانية وزيادة التوعية المجتمعية.',
+          date: '10 ديسمبر 2024',
+          author: 'فريق STOP SIDA',
+          category: 'شراكات',
+          image: 'https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=600',
+          featured: true
+        },
+        {
+          id: 3,
+          title: 'تدريب 100 عامل صحة مجتمعية',
+          excerpt: 'برنامج تدريبي مكثف حول رعاية فيروس نقص المناعة والدعم النفسي الاجتماعي للمرضى.',
+          content: 'تم تدريب المشاركين على أحدث بروتوكولات الرعاية والدعم النفسي.',
+          date: '5 ديسمبر 2024',
+          author: 'إدارة البرامج',
+          category: 'تدريب',
+          image: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600',
+          featured: false
+        }
+      ],
     },
     partners: {
       heroTitle: 'شركاؤنا',
@@ -1896,7 +2097,30 @@ const translations = {
           value: '30+',
           description: 'سنوات من التعاون المثمر'
         }
-      ]
+      ],
+      testimonialsTitle: 'شهادات الشركاء',
+      testimonialsDesc: 'آراء شركائنا حول تعاوننا',
+      testimonials: [
+        {
+          text: 'STOP SIDA شريك موثوق وملتزم. خبرتهم الميدانية ومعرفتهم بالسياق المحلي ذات قيمة كبيرة لبرامجنا.',
+          author: 'د. ماري دوبوا',
+          role: 'ممثلة منظمة الصحة العالمية في موريتانيا'
+        },
+        {
+          text: 'مكّننا التعاون مع STOP SIDA من الوصول إلى الفئات الضعيفة وتحقيق تأثير حقيقي في الوقاية من فيروس نقص المناعة.',
+          author: 'أحمد ولد محمد',
+          role: 'مدير البرنامج الوطني لمكافحة الإيدز'
+        },
+        {
+          text: 'تُظهر STOP SIDA احترافية مثالية وشفافية كاملة في إدارة المشاريع. إنه شريك مميز.',
+          author: 'سارة جونسون',
+          role: 'منسقة الصندوق العالمي'
+        }
+      ],
+      becomePartner: 'كن شريكًا',
+      becomePartnerDesc: 'هل ترغب في الانضمام إلى شبكة شركائنا؟ اتصل بنا لاستكشاف فرص التعاون.',
+      contactUs: 'اتصل بنا',
+      seeReports: 'عرض تقاريرنا'
     },
     // ... autres sections globales
   }

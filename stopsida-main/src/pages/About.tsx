@@ -1,6 +1,7 @@
 import React from 'react';
 import { Calendar, Target, Eye, Heart, Users, Award } from 'lucide-react';
 import { useTranslations } from '../contexts/LanguageContext';
+import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   const t = useTranslations() as any;
@@ -17,21 +18,31 @@ const About: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-600 to-red-800 text-white section-padding">
+      <motion.section
+        className="bg-gradient-to-br from-red-600 to-red-800 text-white section-padding"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
         <div className="container-max">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <motion.h1 className="text-4xl md:text-6xl font-bold mb-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
               {t.about.heroTitle}
-            </h1>
-            <p className="text-xl md:text-2xl text-red-100 leading-relaxed">
+            </motion.h1>
+            <motion.p className="text-xl md:text-2xl text-red-100 leading-relaxed" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
               {t.about.heroDesc}
-            </p>
+            </motion.p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Histoire */}
-      <section className="bg-white section-padding">
+      <motion.section
+        className="bg-white section-padding"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -65,10 +76,15 @@ const About: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Mission & Vision */}
-      <section className="bg-gray-50 section-padding">
+      <motion.section
+        className="bg-gray-50 section-padding"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Mission */}
@@ -98,10 +114,15 @@ const About: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Valeurs */}
-      <section className="bg-white section-padding">
+      <motion.section
+        className="bg-white section-padding"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
         <div className="container-max">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -128,10 +149,15 @@ const About: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Équipe */}
-      <section className="bg-gray-50 section-padding">
+      <motion.section
+        className="bg-gray-50 section-padding"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
         <div className="container-max">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -165,10 +191,15 @@ const About: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Chiffres clés */}
-      <section className="bg-red-600 text-white section-padding">
+      <motion.section
+        className="bg-red-600 text-white section-padding"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
         <div className="container-max">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -188,7 +219,7 @@ const About: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

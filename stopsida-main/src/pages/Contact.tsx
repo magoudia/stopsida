@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle, User, Building } from 'lucide-react';
 import { useTranslations } from '../contexts/LanguageContext';
+import { motion } from 'framer-motion';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -90,7 +91,12 @@ const Contact: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-600 to-red-800 text-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-gradient-to-br from-red-600 to-red-800 text-white section-padding"
+      >
         <div className="container-max">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -101,10 +107,15 @@ const Contact: React.FC = () => {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Info */}
-      <section className="bg-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-white section-padding"
+      >
         <div className="container-max">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {contactInfo.map((info: any, index: number) => {
@@ -129,10 +140,15 @@ const Contact: React.FC = () => {
             })}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Form & Map */}
-      <section className="bg-gray-50 section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-gray-50 section-padding"
+      >
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Formulaire de contact */}
@@ -290,7 +306,12 @@ const Contact: React.FC = () => {
             {/* Carte et informations supplémentaires */}
             <div className="space-y-8">
               {/* Carte */}
-              <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-lg shadow-md overflow-hidden"
+              >
                 <div className="h-64 bg-gray-200 flex items-center justify-center">
                   <div className="text-center text-gray-500">
                     <MapPin className="h-12 w-12 mx-auto mb-2" />
@@ -298,10 +319,15 @@ const Contact: React.FC = () => {
                     <p className="text-sm">{t.contact?.mapLocation || 'Tevragh Zeina, Nouakchott'}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Informations supplémentaires */}
-              <div className="bg-white rounded-lg shadow-md p-6">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-lg shadow-md p-6"
+              >
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
                   {t.contact?.practicalInfoTitle || 'Informations Pratiques'}
                 </h3>
@@ -326,10 +352,15 @@ const Contact: React.FC = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* FAQ rapide */}
-              <div className="bg-red-50 rounded-lg p-6">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-red-50 rounded-lg p-6"
+              >
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
                   {t.contact?.faqTitle || 'Questions Fréquentes'}
                 </h3>
@@ -353,14 +384,19 @@ const Contact: React.FC = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Newsletter */}
-      <section className="bg-red-600 text-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-red-600 text-white section-padding"
+      >
         <div className="container-max text-center">
           <div className="max-w-2xl mx-auto space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold">
@@ -382,7 +418,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

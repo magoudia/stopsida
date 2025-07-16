@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Users, Heart, Clock, Award, CheckCircle, Send } from 'lucide-react';
 import { useTranslations } from '../contexts/LanguageContext';
+import { motion } from 'framer-motion';
 
 const Volunteer: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -37,7 +38,12 @@ const Volunteer: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-600 to-red-800 text-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-gradient-to-br from-red-600 to-red-800 text-white section-padding"
+      >
         <div className="container-max">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -48,10 +54,15 @@ const Volunteer: React.FC = () => {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Pourquoi devenir bénévole */}
-      <section className="bg-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-white section-padding"
+      >
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -71,7 +82,10 @@ const Volunteer: React.FC = () => {
               </div>
             </div>
             <div>
-              <img
+              <motion.img
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 src="https://images.pexels.com/photos/5427674/pexels-photo-5427674.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt={t.volunteer.teamTitle}
                 className="rounded-lg shadow-lg"
@@ -79,10 +93,15 @@ const Volunteer: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Opportunités de bénévolat */}
-      <section className="bg-gray-50 section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-gray-50 section-padding"
+      >
         <div className="container-max">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -95,7 +114,13 @@ const Volunteer: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {opportunities.map((opportunity: any, index: number) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="bg-red-100 p-3 rounded-lg">
                     {/* On garde l'icône dynamique si elle existe, sinon rien */}
@@ -124,14 +149,19 @@ const Volunteer: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Formulaire de candidature */}
-      <section className="bg-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-white section-padding"
+      >
         <div className="container-max">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
@@ -285,10 +315,15 @@ const Volunteer: React.FC = () => {
             </form>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Témoignages */}
-      <section className="bg-red-600 text-white section-padding">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-red-600 text-white section-padding"
+      >
         <div className="container-max">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -300,35 +335,24 @@ const Volunteer: React.FC = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white bg-opacity-10 p-6 rounded-lg">
-              <p className="text-red-100 mb-4 italic">
-                "Être bénévole chez STOP SIDA m'a permis de contribuer concrètement 
-                à la santé de ma communauté. C'est une expérience enrichissante."
-              </p>
-              <div className="font-semibold">Aminata S.</div>
-              <div className="text-red-200 text-sm">Bénévole depuis 2 ans</div>
-            </div>
-            
-            <div className="bg-white bg-opacity-10 p-6 rounded-lg">
-              <p className="text-red-100 mb-4 italic">
-                "La formation reçue et l'accompagnement de l'équipe m'ont donné 
-                confiance pour sensibiliser efficacement sur le VIH/SIDA."
-              </p>
-              <div className="font-semibold">Mohamed O.</div>
-              <div className="text-red-200 text-sm">Bénévole depuis 1 an</div>
-            </div>
-            
-            <div className="bg-white bg-opacity-10 p-6 rounded-lg">
-              <p className="text-red-100 mb-4 italic">
-                "Chaque action, même petite, compte dans cette lutte. 
-                Je suis fière de faire partie de cette mission."
-              </p>
-              <div className="font-semibold">Fatou B.</div>
-              <div className="text-red-200 text-sm">Bénévole depuis 3 ans</div>
-            </div>
+            {t.volunteer.testimonials.map((testimonial: any, idx: number) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white bg-opacity-10 p-6 rounded-lg"
+              >
+                <p className="text-red-100 mb-4 italic">{testimonial.text}</p>
+                <div className="font-semibold">{testimonial.author}</div>
+                {testimonial.since && (
+                  <div className="text-red-200 text-sm">{testimonial.since}</div>
+                )}
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
