@@ -39,7 +39,7 @@ export const useLanguage = () => {
 const translations = {
   fr: {
     footer: {
-      about: "ONG fondée en 1993, œuvrant pour l'accès universel à des soins de qualité dans la lutte contre le VIH/SIDA et les défis sanitaires majeurs.",
+      about: "STOP SIDA, première ONG thématique créée en 1993 en Mauritanie, œuvre pour le développement économique et social, la lutte contre le VIH/SIDA, et l'accès universel à des soins de qualité. Organisation fondée sur le volontariat humanitaire et à but non lucratif.",
       navigation: 'Navigation',
       aboutUs: 'Qui sommes-nous ?',
       ourActions: 'Nos actions',
@@ -57,17 +57,17 @@ const translations = {
     home: {
       heroTitle: 'Ensemble contre le',
       heroHighlight: 'VIH/SIDA',
-      heroDesc: "Depuis 1993, STOP SIDA œuvre pour l'accès universel à des soins de qualité et la lutte contre le VIH/SIDA en Mauritanie.",
+      heroDesc: "STOP SIDA, première ONG thématique créée en 1993 en Mauritanie, œuvre pour le développement économique et social, la lutte contre le VIH/SIDA, et l'accès universel à des soins de qualité. Organisation fondée sur le volontariat humanitaire et à but non lucratif.",
       discoverActions: 'Découvrir nos actions',
       becomeVolunteer: 'Devenir bénévole',
       stats: [
-        { value: '30+', label: "Années d'engagement" },
-        { value: '10K+', label: 'Vies touchées' },
-        { value: '50+', label: 'Projets réalisés' },
-        { value: '24/7', label: 'Assistance disponible' }
+        { value: '31', label: "Années d'engagement" },
+        { value: '431', label: 'PVVIH accompagnées' },
+        { value: '20+', label: 'Partenaires actifs' },
+        { value: '24/7', label: 'Centre de santé ouvert' }
       ],
       missionTitle: 'Notre Mission',
-      missionDesc: "Lutter activement contre le VIH/SIDA par des actions de prévention, d'éducation, de traitement, et de plaidoyer, tout en renforçant les systèmes de santé pour les populations vulnérables.",
+      missionDesc: "Améliorer les connaissances-attitudes-pratiques des jeunes, augmenter la couverture en dépistage, contribuer à l'amélioration du suivi des PVVIH, et sensibiliser sur la santé reproductive et les vaccinations.",
       missionPrevention: 'Prévention',
       missionPreventionDesc: 'Sensibilisation et éducation des communautés',
       missionTreatment: 'Traitement',
@@ -698,6 +698,12 @@ const translations = {
               description: 'Campagnes de communication et sensibilisation',
               since: '2019',
               type: 'Communication'
+            },
+            {
+              name: 'Société Ciment de Mauritanie',
+              description: 'Soutien logistique et matériel aux actions de terrain',
+              since: '2021',
+              type: 'Logistique'
             }
           ]
         }
@@ -1312,7 +1318,7 @@ const translations = {
           title: 'Opening of a new testing center in Rosso',
           excerpt: 'Expansion of our services with the opening of a free and confidential testing center in the Trarza region.',
           content: 'This new center will allow...',
-          date: 'November 20, 2024',
+          date: '20 Novembre 2024',
           author: 'Field Team',
           category: 'Prévention',
           image: 'https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -2072,6 +2078,12 @@ const translations = {
               description: 'حملات التواصل والتوعية',
               since: '2019',
               type: 'تواصل'
+            },
+            {
+              name: 'Société Ciment de Mauritanie',
+              description: 'Soutien logistique et matériel aux actions de terrain',
+              since: '2021',
+              type: 'Logistique'
             }
           ]
         }

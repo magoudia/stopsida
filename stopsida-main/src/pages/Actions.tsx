@@ -2,6 +2,10 @@ import React from 'react';
 import { Shield, Heart, Users, BookOpen, Stethoscope, Megaphone } from 'lucide-react';
 import { useTranslations } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
+import ev1 from '../assets/ev1.png';
+import ev2 from '../assets/ev2.png';
+import ev3 from '../assets/ev3.png';
+import ev4 from '../assets/ev4.png';
 
 const Actions: React.FC = () => {
   const t = useTranslations() as any;
@@ -163,6 +167,37 @@ const Actions: React.FC = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Galerie d'événements */}
+      <motion.section
+        className="bg-white section-padding"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <div className="container-max text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Galerie d'événements</h2>
+          <p className="text-xl text-gray-600 mb-8">Retrouvez ici les moments forts de nos actions sur le terrain.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+              <img src={ev1} alt="Deuxième rapport trimestriel de mise en œuvre des activités du NFM3 lot 2" className="h-48 w-full object-cover rounded-lg shadow mb-2" />
+              <div className="font-semibold text-gray-800 text-sm">Deuxième rapport trimestriel de mise en œuvre des activités du NFM3 lot 2</div>
+            </div>
+            <div>
+              <img src={ev2} alt="FORMATION DES AGENTS DE SANTE COMMUNAUTAIRE POUR L’ACCE AUX SERVICES DE SANTE ORGANISE PAR STOP SIDA" className="h-48 w-full object-cover rounded-lg shadow mb-2" />
+              <div className="font-semibold text-gray-800 text-sm">FORMATION DES AGENTS DE SANTE COMMUNAUTAIRE POUR L’ACCE AUX SERVICES DE SANTE ORGANISE PAR STOP SIDA</div>
+            </div>
+            <div>
+              <img src={ev3} alt="Deuxième rapport trimestriel de mise en œuvre des activités du NFM3 lot 2" className="h-48 w-full object-cover rounded-lg shadow mb-2" />
+              <div className="font-semibold text-gray-800 text-sm">Deuxième rapport trimestriel de mise en œuvre des activités du NFM3 lot 2</div>
+            </div>
+            <div>
+              <img src={ev4} alt="Deuxième rapport trimestriel de mise en œuvre des activités du NFM3 lot 2" className="h-48 w-full object-cover rounded-lg shadow mb-2" />
+              <div className="font-semibold text-gray-800 text-sm">Deuxième rapport trimestriel de mise en œuvre des activités du NFM3 lot 2</div>
+            </div>
           </div>
         </div>
       </motion.section>

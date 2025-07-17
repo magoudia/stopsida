@@ -2,6 +2,29 @@ import React from 'react';
 import { Handshake, Globe, Heart, Award, Users, Building } from 'lucide-react';
 import { useTranslations } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
+import ministereSante from '../assets/ministere_sante.png';
+import oms from '../assets/oms.png';
+import fondMondial from '../assets/fond_mondial.png';
+import usaid from '../assets/usaid.png';
+import undp from '../assets/undp.png';
+import unfpa from '../assets/unfpa.png';
+import peaceCorps from '../assets/peace_corps.png';
+import palladium from '../assets/palladium.png';
+import propel from '../assets/propel.png';
+import bac from '../assets/bac.png';
+import bamis from '../assets/bamis.png';
+import bmi from '../assets/bmi.png';
+import pharma from '../assets/pharma.png';
+import SCM from '../assets/SCM.png';
+import sircoma from '../assets/sircoma.png';
+import taskhaf from '../assets/taskhaf.png';
+import elles from '../assets/elles.png';
+import ms from '../assets/ms.png';
+import senls from '../assets/senls.png';
+import publi from '../assets/publi.png';
+import iom from '../assets/iom.png';
+import unaids from '../assets/unaids.png';
+import hp from '../assets/hp.png';
 
 const Partners: React.FC = () => {
   const t = useTranslations() as any;
@@ -29,6 +52,83 @@ const Partners: React.FC = () => {
     'Private Sector': Award,
     'القطاع الخاص': Award,
   };
+
+  // Mapping nom partenaire -> logo (à jour avec les fichiers assets)
+  const partnerLogoMap: Record<string, string> = {
+    'Organisation Mondiale de la Santé (OMS)': oms,
+    'UNICEF Mauritanie': undp, // Remplacer par unicef.png si tu ajoutes le logo
+    'Fonds Mondial': fondMondial,
+    'Ministère de la Santé': ministereSante,
+    'Programme National de Lutte contre le SIDA': ms,
+    'BAC SANTE': bac,
+    'Bamis': bamis,
+    'BMI': bmi,
+    'Elles du Sahel': elles,
+    'Health Policy Plus': hp,
+    'IOM UN MIGRATION': iom,
+    'Palladium': palladium,
+    'Peace Corps': peaceCorps,
+    'Groupe Chinguitty Pharma': pharma,
+    'PROPEL Health': propel,
+    'Publi Tech': publi,
+    'Société Ciment de Mauritanie': SCM,
+    'Secretariat Executif SENLS': senls,
+    'SIRCOMA': sircoma,
+    'Taskhaf': taskhaf,
+    'UNAIDS': unaids,
+    'UNDP': undp,
+    'UNFPA': unfpa,
+    'USAID': usaid,
+  };
+  function getPartnerLogo(name: string) {
+    return partnerLogoMap[name] || ministereSante;
+  }
+
+  // Définition des partenaires par catégorie selon la liste utilisateur
+  const partnersByCategory = [
+    {
+      title: 'Organisations Internationales',
+      partners: [
+        { logo: fondMondial, name: 'Le Fonds Mondial', desc: 'Financement VIH/SIDA' },
+        { logo: oms, name: 'Organisation Mondiale de la Santé', desc: 'Appui technique' },
+        { logo: unaids, name: 'UNAIDS', desc: 'Coordination ONUSIDA' },
+        { logo: undp, name: 'UNDP', desc: 'Développement durable' },
+        { logo: unfpa, name: 'UNFPA', desc: 'Santé reproductive' },
+        { logo: iom, name: 'IOM UN Migration', desc: 'Migration & santé' },
+        { logo: usaid, name: 'USAID', desc: 'Coopération américaine' },
+      ]
+    },
+    {
+      title: 'Institutions Gouvernementales',
+      partners: [
+        { logo: ministereSante, name: 'Ministère de la Santé (Mauritanie)' },
+        { logo: senls, name: 'Secrétariat Exécutif SENLS' },
+        { logo: ms, name: 'MS/PNEPS' },
+      ]
+    },
+    {
+      title: 'ONG & Société Civile',
+      partners: [
+        { logo: elles, name: 'Elles du Sahel' },
+        { logo: peaceCorps, name: 'Peace Corps' },
+        { logo: hp, name: 'Health Policy Plus' },
+        { logo: propel, name: 'PROPEL Health' },
+      ]
+    },
+    {
+      title: 'Secteur Privé',
+      partners: [
+        { logo: bamis, name: 'BAMIS', desc: 'Banque' },
+        { logo: bmi, name: 'BMI', desc: 'Banque' },
+        { logo: pharma, name: 'Groupe Chinguitty Pharma', desc: 'Pharmacie' },
+        { logo: SCM, name: 'Société Ciment de Mauritanie', desc: 'Industrie' },
+        { logo: sircoma, name: 'SIRCOMA', desc: '?' },
+        { logo: publi, name: 'Publi Tech', desc: 'Communication' },
+        { logo: palladium, name: 'Palladium', desc: 'Consulting' },
+        { logo: bac, name: 'BAC Santé', desc: '' },
+      ]
+    }
+  ];
 
   return (
     <div className="min-h-screen">
@@ -113,66 +213,30 @@ const Partners: React.FC = () => {
             </p>
           </div>
 
-          <div className="space-y-12">
-            {categories.map((category: any, categoryIndex: number) => {
-              const IconComponent = iconMap[category.title as keyof typeof iconMap] || Globe;
-              return (
-                <motion.div
-                  key={categoryIndex}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-lg shadow-md p-8"
-                >
-                  <div className="flex items-center space-x-3 mb-8">
-                    <div className="bg-red-100 p-3 rounded-lg">
-                      <IconComponent className="h-6 w-6 text-red-600" />
+          {partnersByCategory.map((cat, idx) => (
+            <motion.section
+              key={cat.title}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-gray-50 section-padding"
+            >
+              <div className="container-max">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{cat.title}</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {cat.partners.map((p, i) => (
+                    <div key={i} className="border border-gray-200 rounded-lg p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow bg-white">
+                      <img src={p.logo} alt={p.name} className="w-16 h-16 object-contain rounded-lg bg-white mb-3" />
+                      <div className="font-bold text-gray-900 text-lg mb-1">{p.name}</div>
+                      {p.desc && <div className="text-gray-600 text-sm mb-2">{p.desc}</div>}
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900">
-                      {category.title}
-                    </h3>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {category.partners?.map((partner: any, partnerIndex: number) => (
-                      <motion.div
-                        key={partnerIndex}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
-                      >
-                        <div className="flex items-center space-x-4 mb-4">
-                          <motion.img
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            src="https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=200"
-                            alt={partner.name}
-                            className="w-16 h-16 object-cover rounded-lg"
-                          />
-                          <div>
-                            <h4 className="font-semibold text-gray-900 line-clamp-2">
-                              {partner.name}
-                            </h4>
-                            <span className="text-sm text-red-600 font-medium">
-                              {partner.type}
-                            </span>
-                          </div>
-                        </div>
-                        <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                          {partner.description}
-                        </p>
-                        <div className="text-xs text-gray-500">
-                          <span className="font-medium">{t.partners.partnerSince}</span> {partner.since}
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+                  ))}
+                </div>
+              </div>
+            </motion.section>
+          ))}
         </div>
       </motion.section>
 
